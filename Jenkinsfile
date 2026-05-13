@@ -13,7 +13,7 @@ pipeline {
         stage('Deploy Website') {
             steps {
                 sh '''
-                sudo cp -r * /var/www/html/
+                sudo cp -r index.html style.css script.js /var/www/html/
                 '''
             }
         }
