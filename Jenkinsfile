@@ -5,7 +5,8 @@ pipeline {
 
         stage('Clone Code') {
             steps {
-                git 'https://github.com/Ruphan24/miniproject.git'
+                git branch: 'main',
+                url: 'https://github.com/Ruphan24/miniproject.git'
             }
         }
 
