@@ -1,22 +1,29 @@
 pipeline {
     agent any
-
+ 
     stages {
-
-        stage('Clone Code') {
+ 
+        stage('Clone Repository') {
             steps {
                 git branch: 'main',
-                url: 'https://github.com/Ruphan24/miniproject.git'
+                url: 'https://github.com/Ruphan/miniproject.git'
             }
         }
-
-        stage('Deploy Website') {
+ 
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t sample-image .'
+            }
+        }
+ 
+        stage('Run Docker Container') {
             steps {
                 sh '''
-                sudo cp -r index.html style.css script.js /var/www/html/
+                docker stop sample || true
+                docker rm sample || true
+                docker run -d -p 80:80 --name sample sample-image
                 '''
             }
         }
-
     }
 }
