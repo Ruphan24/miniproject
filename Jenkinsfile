@@ -21,7 +21,7 @@ pipeline {
                 sh '''
                 docker stop sample || true
                 docker rm sample || true
-                docker run -d -p 80:80 --name sample sample-image
+                docker run -d -p 9090:80 --name sample sample-image
                 '''
             }
         }
