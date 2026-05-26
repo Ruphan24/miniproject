@@ -1,0 +1,21 @@
+services:
+  temp-app:
+    image: maheshwar2146/sample-image
+    container_name: temp
+    ports:
+      - "9090:80"
+    restart: unless-stopped
+ 
+  web:
+    image: nginx
+    container_name: temp_cont
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+ 
+  best:
+    image: ruphan24/sample-image
+    container_name: ruphan_cont
+    ports:
+      - "9091:80"
+    restart: unless-stopped
