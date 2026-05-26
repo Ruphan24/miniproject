@@ -3,7 +3,7 @@ services:
     image: maheshwar2146/sample-image
     container_name: temp
     ports:
-      - "9090:80"
+      - "9091:80"
     restart: unless-stopped
  
   web:
@@ -17,5 +17,5 @@ services:
     image: ruphan24/sample-image
     container_name: ruphan_cont
     ports:
-      - "9091:80"
+      - "9090:80"
     restart: unless-stopped
